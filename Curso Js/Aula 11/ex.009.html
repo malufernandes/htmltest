@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeroporto Internacional</title>
+</head>
+<body>
+    <h1>Brasileiro ou Estrangeiro? Descubra agora mesmo!!</h1>
+    País em que vive: <input type="string" name="txtnac" id="txtnac">
+    <p>Como você se chama ?<input type="string" name="txtnome" id="txtnome"></p>
+    <p>Quantos anos você tem ?<input type="string" name="idade" id="idade"></p>
+   <input type="button" value="Verificar" onclick="string()">
+
+    <div id='nac'>
+    </div>
+
+    <script>
+
+        function string(){
+
+        var txtn = window.document.querySelector('input#txtnac')
+        var naci = window.document.querySelector('div#nac')
+        var nom = window.document.querySelector('input#txtnome')
+        var ida = window.document.querySelector('input#idade')
+        var nac = String(txtn.value)
+        var nome = String(txtnome.value)
+        var idad = String(idade.value)
+
+            naci.innerHTML = `<p>País em que vive: ${nac}.</p>`
+
+          if(nac == 'Brasil' || 'brasil'){
+              naci.innerHTML += `<p>Você é Brasileiro!</p>`
+          }else{
+              naci.innerHTML += `<p>Você é Estrangeiro!</p>`
+          } 
+          naci.innerHTML += `<p>Seja bem vindo ao site do <strong>Aeroporto Internacional Brasileiro</strong>, ${nome}!. Você tem ${idad} anos.<p>`
+            
+        }
+    </script>
+</body>
+</html>
